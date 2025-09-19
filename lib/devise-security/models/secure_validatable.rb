@@ -30,7 +30,7 @@ module Devise
             validation_condition = "#{login_attribute}_changed?".to_sym
 
             validates login_attribute, uniqueness: {
-                                         scope: authentication_keys[1..-1],
+                                         scope: authentication_scope,
                                          case_sensitive: !!case_insensitive_keys
                                        },
                                        if: validation_condition
